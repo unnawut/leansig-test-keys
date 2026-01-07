@@ -28,7 +28,7 @@ test: install
 	cd $(LEAN_SPEC_REPO_DIR) && uv run python -m consensus_testing.keys --scheme test
 	@echo "==> Moving generated files to test_scheme/"
 	mkdir -p test_scheme
-	cp -r $(LEAN_SPEC_REPO_DIR)/test_scheme/* test_scheme/
+	cp -r $(LEAN_SPEC_REPO_DIR)/packages/testing/src/consensus_testing/test_keys/test_scheme/* test_scheme/
 	@echo "==> Done! Keys generated in test_scheme/ folder"
 
 prod: install
@@ -36,7 +36,7 @@ prod: install
 	cd $(LEAN_SPEC_REPO_DIR) && uv run python -m consensus_testing.keys --scheme prod
 	@echo "==> Moving generated files to prod_scheme/"
 	mkdir -p prod_scheme
-	cp -r $(LEAN_SPEC_REPO_DIR)/prod_scheme/* prod_scheme/
+	cp -r $(LEAN_SPEC_REPO_DIR)/packages/testing/src/consensus_testing/test_keys/prod_scheme/* prod_scheme/
 	@echo "==> Done! Keys generated in prod_scheme/ folder"
 
 package:
